@@ -1,85 +1,271 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
 
 
 
 * {
-    margin:0; /* 바깥여백 */
-    padding:0; /* 안쪽 여백 */
+    margin:0;/*바깥여백*/
+    padding:0;/*안쪽여백*/
     box-sizing: border-box;
-    /* 박스 영역은 테두리까지 지정*/
+    /*박스 영역은 테두리까지 지정*/
 }
 
 
 #container {
-    margin: 0 auto; /*화면 중앙에 배치*/
+    margin: 0 auto;/* 화면 중앙에 배치*/
     width:1200px;
 }
 
 header {
-    width:100%; /* 1200px */
-    height: 100px; /* 높이 */
-    background-color: blue;
+    width:100%; /* 너비1200px */
+    height:100px;/*높이 */
+    background-color: #07c;
 }
 
-#logo {
-    font-family: 'Monoton', cursive;
+#logo{
+    font-family: 'Rubik Dirt', cursive;
     float:left;
     width:250px;
-    height: 100px;
-    /*background-color: indigo;*/
-    padding-left: 60px;
-    line-height: 100px;
-    font-size: 16px;
+    height:100px;
+    /* background-color: indigo; */
+    padding-left:50px;
+    line-height:100px;
+    font-size: 18px;
     
 }
 
-#title {
-    color: rgb(255, 0, 0);
+#title{
+    color:blanchedalmond;
 }
 
-nav {
+nav{
     float:right;
     width:900px;
-    height: 100px;
-    background-color: green;
+    height:100px;
+    /* background-color: green; */
+    padding-top: 40px;
 }
 
-#slideshow {
+#topMenu {
+
+    height: 60px;
+}
+
+/* 특정 위치(아택이디)아래에 있는 요소만 선택 */
+#topMenu > li {
+    float:left;
+    position:relative;
+    /* 서브메뉴를 absolute으로 만들기 위해 부모 요소를
+    relative로 지정한다.   */
+}
+
+
+#topMenu > li > a {
+    display:block;   /* 블락요소로 설정 */
+    color:#fff;
+    padding : 20px 60px;
+}
+
+#topMenu > li > a:hover {
+
+    color: #000;
+    text-shadow: 0 -1px #07c;
+}
+
+#topMenu > li > ul {
+    display: none;
+    position:absolute;
+    width: 160px;
+    background-color: rgba(255,255,255,0.4);
+    left:0;
+    margin:0;
+}
+
+#topMenu > li > ul > li {
+
+    padding:10px;
+}
+
+#topMenu > li > ul > li > a{
+
+    padding:10px;
+    color:#000
+}
+
+#topMenu > li:hover > ul {
+
+    display:block;
+    z-index:10;
+}
+#topMenu > li > ul > li > a:hover{
+
+    padding:10px;
+    color:red
+}
+
+
+ul{
+    list-style: none;
+}
+
+#slideShow{
+    
     width:100%;
-    height: 300px;
+    height:500px;
     background-color: orange;
-    overflow: hidden;
-    /* 영역에 사진이 넘치면 넘치는 부분은 감춘다.*/
+    overflow:hidden; 
+    /*영역에 사진이 넘치면 
+    넘치는 부분은 감춘다.*/
 }
 
 #contents {
-    width:100%;
-    height: 300px;
+    width:1200px;
+    height:300px;
 }
 
-#tabMenu {
+#tabMenu{
     float:left;
     width:600px;
-    height: 100%;
-    background-color: yellow;
+    height:300px;
+    /* background-color: violet; */
 }
 
-#Link {
+#tabMenu input[type="radio"] {
+    display : none;
+}
+
+#tab1:checked ~ #notice,
+#tab2:checked ~ #gallery{
+display : block;
+}
+
+#tabMenu label {
+    display:inline-block; /* 가로로 배치 */
+    padding:15px 20px; 
+    text-align: center;
+    color:#aaa;
+    border: 1px solid transparent;
+}
+
+#tabMenu label:hover{
+    color:#222;
+    cursor:pointer;
+}
+
+#tabMenu input:checked + label {
+    color: #b00;
+    border: 1px solid #ddd;
+    background-color: #eee;;
+}
+
+.tabContent {
+    display:none;
+    border-top:1px solid #ddd;
+}
+
+.tabContent h2 {
+    display: none;
+}
+
+#gallery ul li {
+    display:inline
+}
+
+
+
+#links{
     float:right;
     width:600px;
-    height: 100%;
-    background-color: skyblue;
+    height:300px;
+    padding-top:70px;
+    /* background-color: skyblue; */
 }
 
-footer {
-    width:100%; /* 1200px */
-    height: 100px; /* 높이 */
-    background-color: gray;
+#links ul {
+    padding: 0;
+    overflow:hidden;
+}
+
+#links ul li {
+    float:left;
+    width:33%;
+    text-align: center;
+    margin : 10px 0;
+}
+
+#links ul li a span {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius:100%;
+    /* 네모난 사진을 둥글게 */
+    line-height: 150px;
+}
+
+#quick-icon1{
+    background-image: url('icon1.jpg');
+}
+#quick-icon2{
+    background-image: url('icon2.jpg');
+}
+#quick-icon3{
+    background-image: url('icon3.jpg');
+}
+
+footer{
+    width:100%; /* 너비1200px */
+    height:100px;/*높이 */
+    /* background-color: grey; */
+    border-top:2px solid #222;
+    /* 위쪽에 선을 하나 추가하여 영역 분리를 나타냄 */
+}
+
+#bottomMenu {
+    width:100%;
+    height: 20px;
+    position:relative;
+}
+
+#sns {
+    position:absolute;
+    right:0;
+}
+
+#sns ul li {
+    border:none;
+    padding: 5px;
+}
+
+#bottomMenu ul {
+    margin-top:15px;
+
+}
+#bottomMenu ul li {
+    float : left;
+    padding:5px 20px;
+    border-right: 1px solid #ddd;
+}
+
+#bottomMenu ul li:last-child{
+    border-right: none;
+}
+
+#bottomMenu ul li a, #bottomMenu ul li a:visited {
+    font-size:15px;
+    color:#666;
+}
+
+#company {
+    clear: left;
+    margin-top:25px;
+    margin-left:20px;
 }
 
 a {
     text-decoration: none;
+}
+
+p {
+    font-size:18px;
+    color:#aaa;
 }
