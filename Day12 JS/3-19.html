@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var strNum1 = "12";
+        var strNum2 = "13";
+        var strNum3 = 12;
+        var strNum4 = 13;
+
+        console.log("String('12') + String('13') = " + String(strNum1) + String(strNum2)); // 문자열로 인식하여 1213 출력
+        console.log("String(12) + String(13) = " + String(strNum3) + String(strNum4)); // 문자열로 인식하여 1213 출력
+        console.log("Number('12') + Number('13') = " + (Number(strNum1) + Number(strNum2))); // 숫자로 인식하여 25 출력
+        console.log("Number(12) + Number(13) = " + (Number(strNum3) + Number(strNum4))); // 숫자로 인식하여 25 출력
+
+    </script>h 
+</body>
+</html>

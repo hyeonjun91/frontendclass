@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var strNum1 ="12"
+        var strNum2 ="12.1"
+        var strNum3 ="12$"
+        var strNum4 ="12.1e2"
+        var strNum5 ="0x12"
+
+        console.log("parseInt(12) = " + parseInt(strNum1)); // 12출력
+        console.log("parseInt(12,8) = " + parseInt(strNum1,8)); // 12를 8진수로 인식하고 10진수로 변환하여 10 출력
+
+        console.log("parseInt(12,16) = " + parseInt(strNum1, 16)); // 12를 16진수로 인식하고 10진수로 변환하여 18 출력
+
+        console.log("parseInt(12.1) = " + parseInt(strNum2)); // 12 출력 - 정수로 변환
+
+        console.log("parseInt(12$) = " + parseInt(strNum3)); // $앞 12까지만 숫자로 변환하여 12 출력
+
+        console.log("parseInt(12.1e2) = " + parseInt(strNum4)); // 12 출력 - 정수로 변환
+
+        console.log("parseInt(12.0x12) = " + parseInt(strNum5)); // 0x12를 16진수로 인식하고 10진수로 변환하여 18 출력
+        
+
+    </script>
+</body>
+</html>
